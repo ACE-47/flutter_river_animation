@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
@@ -75,6 +74,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     btnAnimationController: _btnAnimationController,
                     press: () {
                       _btnAnimationController.isActive = true;
+                      showGeneralDialog(
+                        // barrierDismissible: true,
+                        // barrierLabel: 'Sign Up',
+                        context: context,
+                        pageBuilder: (context, animation, secondAnimation) =>
+                            Container(
+                          height: size.height * 0.8,
+                          margin: const EdgeInsets.symmetric(horizontal: 16),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: Scaffold(
+                              backgroundColor: Colors.white,
+                              body: Column(
+                                children: [],
+                              )),
+                        ),
+                      );
                     },
                   ),
                   const Padding(
